@@ -2,17 +2,21 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading; 
 
 namespace Client
 {
-  class Program // test
+
+ 
+  class Program 
   {
     static void Main(string[] args)
     {
       while (true)
       {
+
         var client = new TcpClient();
-        client.Connect(IPAddress.Loopback, 5000);
+        client.Connect(IPAddress.Parse("127.0.0.1"), 5000);
 
         var stream = client.GetStream();
 
