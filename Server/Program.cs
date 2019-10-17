@@ -26,6 +26,7 @@ namespace Server
         var msg = Encoding.UTF8.GetString(buffer, 0, rcnt);
 
         if (msg == "exit") break;
+        
 
         Console.WriteLine($"Message: {msg}");
 
