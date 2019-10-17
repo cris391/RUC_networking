@@ -11,8 +11,6 @@ namespace Client
     {
       while (true)
       {
-
-
         var client = new TcpClient();
         client.Connect(IPAddress.Loopback, 5000);
 
@@ -34,7 +32,7 @@ namespace Client
 
         msg = Encoding.UTF8.GetString(buffer, 0, rcnt);
 
-        Console.WriteLine($"Message: {msg}");
+        Console.WriteLine($"Message from server: {msg}");
 
         stream.Close();
       }
