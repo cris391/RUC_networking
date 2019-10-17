@@ -4,12 +4,8 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
-
-
-
 namespace Server
 {
-
 
     // State object for reading client dat asynchrounusly 
     public class StateObject
@@ -39,8 +35,11 @@ namespace Server
             // The DNS name of comp.
             // running the listener is "host.contoso.com"
             IPHostEntry iPHostInfo = Dns.GetHostEntry(Dns.GetHostName());
-            IPAddress ipAddress = iPHostInfo.AddressList[0];
+            IPAddress ipAddress = iPHostInfo.AddressList[0]; //IPAddress.Parse("127.0.0.1"); //IPAddress.Parse("127.0.0.1");
             IPEndPoint localEndpoint = new IPEndPoint(ipAddress, 5000); // change to loopback or other IP == MODIFY TO IP 127.0.0.1 port 5000
+
+            Console.WriteLine($"IP Address:  {ipAddress}");
+            Console.WriteLine($"LOcal end poin {localEndpoint}");
 
             // Create a TCO/IP socket.
             Socket listener = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
