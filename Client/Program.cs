@@ -32,7 +32,7 @@ namespace Client
 
         msg = Encoding.UTF8.GetString(buffer, 0, rcnt);
 
-        Console.WriteLine($"Message from server: {msg}");
+        Console.WriteLine($"Message from server: {msg}.");
 
         stream.Close();
       }
